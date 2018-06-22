@@ -8,7 +8,7 @@ import java.time.*;
 import reactor.core.publisher.Flux;
 
 /**
- * Learn how to create Flux instances.
+ * Aprende a crear instancias de Flux.
  *
  * @author Sebastien Deleuze
  * @see <a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html">Flux Javadoc</a>
@@ -17,35 +17,35 @@ public class Part01Flux {
 
 //========================================================================================
 
-	// TODO Return an empty Flux
+	// TODO Devuelve un Flux vacío
 	Flux<String> emptyFlux() {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return a Flux that contains 2 values "foo" and "bar" without using an array or a collection
+	// TODO Devuelve un Flux que contiene 2 valores "foo" y "bar", sin usar colecciones ni vectores
 	Flux<String> fooBarFluxFromValues() {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Create a Flux from a List that contains 2 values "foo" and "bar"
+	// TODO Crea un Flux a partir de una lista que contiene 2 valores "foo" y "bar"
 	Flux<String> fooBarFluxFromList() {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Create a Flux that emits an IllegalStateException
+	// TODO Crea un Flux el cual emite una IllegalStateException
 	Flux<String> errorFlux() {
 		return null;
 	}
 
 //========================================================================================
 
-		// TODO Create a Flux that emits increasing values from 0 to 9 each 100ms
+		// TODO Crea un Flux que emite valores incrementales desde 0 hasta 9 cada 100ms
 	Flux<Long> counter() {
 		return null;
 	}

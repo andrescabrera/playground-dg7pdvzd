@@ -28,7 +28,7 @@ import reactor.core.publisher.Flux;
 import static org.assertj.core.api.Assertions.*;
 
 /**
- * Learn how to use StepVerifier to test Mono, Flux or any other kind of Reactive Streams Publisher.
+ * Aprende a utilizar StepVerifier para testear un Mono, Flux o cualquier otro tipo de Publisher de Reactive Streams.
  *
  * @author Sebastien Deleuze
  * @see <a href="http://projectreactor.io/docs/test/release/api/reactor/test/StepVerifier.html">StepVerifier Javadoc</a>
@@ -37,37 +37,40 @@ public class Part03StepVerifier {
 
 //========================================================================================
 
-	// TODO Use StepVerifier to check that the flux parameter emits "foo" and "bar" elements then completes successfully.
+	// TODO Usa StepVerifier para comprobar que un parametro flux emita un elemento "foo" y un "bar"
+	// y luego se complete satisfactoriamente.
 	void expectFooBarComplete(Flux<String> flux) {
 		fail();
 	}
 
 //========================================================================================
 
-	// TODO Use StepVerifier to check that the flux parameter emits "foo" and "bar" elements then a RuntimeException error.
+	// TODO Usa StepVerifier para comprobar que un parametro flux emita un elemento "foo" y un "bar"
+	// y luego un error RuntimeException.
 	void expectFooBarError(Flux<String> flux) {
 		fail();
 	}
 
 //========================================================================================
 
-	// TODO Use StepVerifier to check that the flux parameter emits a User with "swhite"username
-	// and another one with "jpinkman" then completes successfully.
+	// TODO Usa StepVerifier para comprobar que un parametro flux emita un User con un nombre de usuario "swhite"
+	// y otro con "jpinkman" y luego se complete de forma satisfactoria.
 	void expectSkylerJesseComplete(Flux<User> flux) {
 		fail();
 	}
 
 //========================================================================================
 
-	// TODO Expect 10 elements then complete and notice how long the test takes.
+	// TODO Espera 10 elementos y luego se completa, luego te informa cuanto tiempo tomó el test.
 	void expect10Elements(Flux<Long> flux) {
 		fail();
 	}
 
 //========================================================================================
 
-	// TODO Expect 3600 elements at intervals of 1 second, and verify quicker than 3600s
-	// by manipulating virtual time thanks to StepVerifier#withVirtualTime, notice how long the test takes
+	// TODO Espera 3600 elementos cada intervalos de 1 segundo, y verifica los mas rapidos de 3600s
+	// mediante la manipulacioón virtual del tiempo gracias a StepVerifier#withVirtualTime,
+	// luego informa cuanto tiempo tomó la prueba
 	void expect3600Elements(Supplier<Flux<Long>> supplier) {
 		fail();
 	}

@@ -22,7 +22,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * Learn how to deal with errors.
+ * Aprende como trabajar con errores.
  *
  * @author Sebastien Deleuze
  * @see Exceptions#propagate(Throwable)
@@ -31,22 +31,22 @@ public class Part07Errors {
 
 //========================================================================================
 
-	// TODO Return a Mono<User> containing User.SAUL when an error occurs in the input Mono, else do not change the input Mono.
+	// TODO Devuelve un Mono<User> conteniendo User.SAUL cuando un error ocurre en el Mono de entrada, sino no cambia el Mono de entrada.
 	Mono<User> betterCallSaulForBogusMono(Mono<User> mono) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return a Flux<User> containing User.SAUL and User.JESSE when an error occurs in the input Flux, else do not change the input Flux.
+	// TODO Devuelve un Flux<User> conteniendo User.SAUL y User.JESSE cuando un error ocurre en el Flux de entrada, sino no cambia el Flux de entrada.
 	Flux<User> betterCallSaulAndJesseForBogusFlux(Flux<User> flux) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Implement a method that capitalizes each user of the incoming flux using the
-	// #capitalizeUser method and emits an error containing a GetOutOfHereException error
+	// TODO Implementa un metodo que ponga en mayuscula cada usuario del flux entrante utilizando un
+	// metodo #capitalizeUser y emita un error conteniendo una excepcioón del tipo GetOutOfHereException
 	Flux<User> capitalizeMany(Flux<User> flux) {
 		return null;
 	}

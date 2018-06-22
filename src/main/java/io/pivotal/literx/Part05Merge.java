@@ -10,7 +10,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * Learn how to merge flux.
+ * Aprende como mezclar un flux.
  *
  * @author Sebastien Deleuze
  */
@@ -18,21 +18,21 @@ public class Part05Merge {
 
 //========================================================================================
 
-	// TODO Merge flux1 and flux2 values with interleave
+	// TODO Mezcla los valores del flux1 y flux2 con entremezclado
 	Flux<User> mergeFluxWithInterleave(Flux<User> flux1, Flux<User> flux2) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Merge flux1 and flux2 values with no interleave (flux1 values and then flux2 values)
+	// TODO Mezcla los valores del flux1 y del flux2 sin entremezclar (valores del flux1 y luego valores del flux2)
 	Flux<User> mergeFluxWithNoInterleave(Flux<User> flux1, Flux<User> flux2) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Create a Flux containing the value of mono1 then the value of mono2
+	// TODO Crea un Flux que contenga el valor del mono1 y luego el valor del mono2
 	Flux<User> createFluxFromMultipleMono(Mono<User> mono1, Mono<User> mono2) {
 		return null;
 	}

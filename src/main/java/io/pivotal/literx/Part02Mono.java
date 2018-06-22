@@ -8,7 +8,7 @@ import java.time.*;
 import reactor.core.publisher.Mono;
 
 /**
- * Learn how to create Mono instances.
+ * Aprende a crear instancias de Mono.
  *
  * @author Sebastien Deleuze
  * @see <a href="http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html">Mono Javadoc</a>
@@ -17,28 +17,28 @@ public class Part02Mono {
 
 //========================================================================================
 
-	// TODO Return an empty Mono
+	// TODO Devuelve un Mono vacío
 	Mono<String> emptyMono() {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return a Mono that never emits any signal
+	// TODO Devuelve un Mono que nunca emite una señal
 	Mono<String> monoWithNoSignal() {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return a Mono that contains a "foo" value
+	// TODO Devuelve un Mono que contiene un valor "foo"
 	Mono<String> fooMono() {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Create a Mono that emits an IllegalStateException
+	// TODO Crea un Mono que emite una IllegalStateException
 	Mono<String> errorMono() {
 		return null;
 	}

@@ -12,7 +12,7 @@ import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
 /**
- * Learn how to control the demand.
+ * Aprende a controlar la demanda
  *
  * @author Sebastien Deleuze
  */
@@ -22,28 +22,31 @@ public class Part06Request {
 
 //========================================================================================
 
-	// TODO Create a StepVerifier that initially requests all values and expect 4 values to be received
+	// TODO Crea un StepVerifier que inicialmente solicita todos los valores y espera recibir 4 valores
 	StepVerifier requestAllExpectFour(Flux<User> flux) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Create a StepVerifier that initially requests 1 value and expects User.SKYLER then requests another value and expects User.JESSE.
+	// TODO Crea un StepVerifier que inicialmente solicita 1 valor y espera un User.SKYLER entonces
+	// solicita otro valor y espera User.JESSE.
 	StepVerifier requestOneExpectSkylerThenRequestOneExpectJesse(Flux<User> flux) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return a Flux with all users stored in the repository that prints automatically logs for all Reactive Streams signals
+	// TODO Devuelve un Flux con todos los usuarios almacenados en el repositorio e imprime logs automáticamente
+	// en cada señal de Reactive Streams
 	Flux<User> fluxWithLog() {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return a Flux with all users stored in the repository that prints "Starring:" on subscribe, "firstname lastname" for all values and "The end!" on complete
+	// TODO Devuelve un Flux con todos los usuarios almacenados en el repositorio e imprime
+	// "Starring:" en la suscripción, "firstname lastname" para cada uno de los valores y "The end!" en la compleción.
 	Flux<User> fluxWithDoOnPrintln() {
 		return null;
 	}
