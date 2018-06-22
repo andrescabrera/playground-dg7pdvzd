@@ -10,7 +10,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * Learn how to transform values.
+ * Aprende a transformar valores
  *
  * @author Sebastien Deleuze
  */
@@ -18,21 +18,21 @@ public class Part04Transform {
 
 //========================================================================================
 
-	// TODO Capitalize the user username, firstname and lastname
+	// TODO Pone en mayúsculas el username, firstname y lastname del User
 	Mono<User> capitalizeOne(Mono<User> mono) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Capitalize the users username, firstName and lastName
+	// TODO Pone en mayúsculas el username, firstname y lastname de cada User
 	Flux<User> capitalizeMany(Flux<User> flux) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Capitalize the users username, firstName and lastName using #asyncCapitalizeUser
+	// TODO Pone en mayúsculas el username, firstname y lastname de cada User, usando #asyncCapitalizeUser
 	Flux<User> asyncCapitalizeMany(Flux<User> flux) {
 		return null;
 	}

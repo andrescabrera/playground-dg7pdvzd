@@ -34,13 +34,13 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * Learn how to adapt from/to RxJava 2 Observable/Single/Flowable and Java 8+ CompletableFuture.
+ * Aprende como adaptar desde/hacia Observable/Single/Flowable de RxJava 2 y Java 8+ CompletableFuture.
  *
- * Mono and Flux already implements Reactive Streams interfaces so they are natively
- * Reactive Streams compliant + there are {@link Mono#from(Publisher)} and {@link Flux#from(Publisher)}
+ * Mono y Flux ya implementan las interfaces de Reactive Streams por lo que son compatibles nativamente
+ * con Reactive Streams + aqui hay {@link Mono#from(Publisher)} y {@link Flux#from(Publisher)}
  * factory methods.
  *
- * For RxJava 2, you should not use Reactor Adapter but only RxJava 2 and Reactor Core.
+ * Para RxJava 2, no deberías usar el Reactor Adapter pero solo entre RxJava 2 y Reactor Core.
  *
  * @author Sebastien Deleuze
  */
@@ -50,48 +50,48 @@ public class Part09Adapt {
 
 //========================================================================================
 
-	// TODO Adapt Flux to RxJava Flowable
+	// TODO Adapta Flux a un Flowable de RxJava
 	Flowable<User> fromFluxToFlowable(Flux<User> flux) {
 		return null;
 	}
 
-	// TODO Adapt RxJava Flowable to Flux
+	// TODO Adapta un Flowable de RxJava a un Flux
 	Flux<User> fromFlowableToFlux(Flowable<User> flowable) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Adapt Flux to RxJava Observable
+	// TODO Adapta un Flux a RxJava Observable
 	Observable<User> fromFluxToObservable(Flux<User> flux) {
 		return null;
 	}
 
-	// TODO Adapt RxJava Observable to Flux
+	// TODO Adapta un Observable de RxJava a Flux
 	Flux<User> fromObservableToFlux(Observable<User> observable) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Adapt Mono to RxJava Single
+	// TODO Adapta un Mono a un Single de RxJava
 	Single<User> fromMonoToSingle(Mono<User> mono) {
 		return null;
 	}
 
-	// TODO Adapt RxJava Single to Mono
+	// TODO Adapta un Single de RxJava a un Mono
 	Mono<User> fromSingleToMono(Single<User> single) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Adapt Mono to Java 8+ CompletableFuture
+	// TODO Adapta un Mono a un CompletableFuture de Java 8+
 	CompletableFuture<User> fromMonoToCompletableFuture(Mono<User> mono) {
 		return null;
 	}
 
-	// TODO Adapt Java 8+ CompletableFuture to Mono
+	// TODO Adapta un CompletableFuture Java 8+ a un Mono
 	Mono<User> fromCompletableFutureToMono(CompletableFuture<User> future) {
 		return null;
 	}

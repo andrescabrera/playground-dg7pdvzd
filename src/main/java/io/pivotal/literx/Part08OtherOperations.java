@@ -10,7 +10,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * Learn how to use various other operators.
+ * Aprende como usar otros operadores varios.
  *
  * @author Sebastien Deleuze
  */
@@ -18,42 +18,42 @@ public class Part08OtherOperations {
 
 //========================================================================================
 
-	// TODO Create a Flux of user from Flux of username, firstname and lastname.
+	// TODO Crea un Flux de user desde un Flux de username, firstname y lastname.
 	Flux<User> userFluxFromStringFlux(Flux<String> usernameFlux, Flux<String> firstnameFlux, Flux<String> lastnameFlux) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return the mono which returns its value faster
+	// TODO Devuelve el mono el cual devuelva su valor más rápido
 	Mono<User> useFastestMono(Mono<User> mono1, Mono<User> mono2) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return the flux which returns the first value faster
+	// TODO Devuelve el flux el cual devuelva el primer valor más rápido
 	Flux<User> useFastestFlux(Flux<User> flux1, Flux<User> flux2) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Convert the input Flux<User> to a Mono<Void> that represents the complete signal of the flux
+	// TODO Convierte el input Flux<User> en un Mono<Void> que representa la señal de compleción del flux
 	Mono<Void> fluxCompletion(Flux<User> flux) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return a valid Mono of user for null input and non null input user (hint: Reactive Streams do not accept null values)
+	// TODO Devuelve un Mono válido, tanto para un input user de valor null como para uno de valor no nulo (pista: Reactive Streams no acepta nulos)
 	Mono<User> nullAwareUserToMono(User user) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Return the same mono passed as input parameter, expect that it will emit User.SKYLER when empty
+	// TODO Devuelve el mismo mono pasado como parámetro de entrada, esperando que este emita User.SKYLER cuando esté vacío
 	Mono<User> emptyToSkyler(Mono<User> mono) {
 		return null;
 	}

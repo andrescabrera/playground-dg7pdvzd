@@ -13,10 +13,10 @@ import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 
 /**
- * Learn how to call blocking code from Reactive one with adapted concurrency strategy for
- * blocking code that produces or receives data.
+ * Aprende como llamar código bloqueante desde uno Reactivo, con una estrategia de concurrencia adaptada para
+ * codigo bloqueante el cual produce o recibe datos.
  *
- * For those who know RxJava:
+ * Para aquellos que ya conocen RxJava:
  *  - RxJava subscribeOn = Reactor subscribeOn
  *  - RxJava observeOn = Reactor publishOn
  *  - RxJava Schedulers.io <==> Reactor Schedulers.elastic
@@ -30,14 +30,16 @@ public class Part11BlockingToReactive {
 
 //========================================================================================
 
-	// TODO Create a Flux for reading all users from the blocking repository deferred until the flux is subscribed, and run it with an elastic scheduler
+	// TODO Crea un Flux para la lectura de los usuario desde un repository bloqueante diferido mientras
+	// el flux esta suscripto, y lo ejecuta con un elastic scheduler
 	Flux<User> blockingRepositoryToFlux(BlockingRepository<User> repository) {
 		return null;
 	}
 
 //========================================================================================
 
-	// TODO Insert users contained in the Flux parameter in the blocking repository using an elastic scheduler and return a Mono<Void> that signal the end of the operation
+	// TODO Inserta usuarios contenidos en el parametro Flux en el repositorio bloqueante,
+	// usando un elastic scheduler y devuelve un Mono<Void> el cual informa la señal de fin de la operación.
 	Mono<Void> fluxToBlockingRepository(Flux<User> flux, BlockingRepository<User> repository) {
 		return null;
 	}

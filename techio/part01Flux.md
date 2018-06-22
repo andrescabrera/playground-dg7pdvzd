@@ -1,25 +1,25 @@
 # Flux
 
-## Description
+## Descripción
 
-A `Flux<T>` is a Reactive Streams `Publisher`, augmented with a lot of operators that can be
-used to generate, transform, orchestrate Flux sequences.
+Un `Flux<T>` es un `Publisher` de Reactive Streams, aumentado con un montón de operadores que puedan ser
+usados para generar, transformar, orquestar secuencias Flux.
 
-It can emit 0 to _n_ `<T>` elements (`onNext` event) then either completes or errors
-(`onComplete` and `onError` terminal events). If no terminal event is triggered, the
-`Flux` is infinite.
+Este puede emitir de 0 a _n_ `<T>` elementos (eventos `onNext`) entonces se completa o finaliza con error
+(eventos terminales `onComplete` y `onError`). Si no hay eventos terminales disparados, el
+`Flux` es infinito.
 
-- Static factories on Flux allow to create sources, or generate them from several callbacks types.
-- Instance methods, the operators, let you build an asynchronous processing pipeline that
-  will produce an asynchronous sequence.
-- Each `Flux#subscribe()` or multicasting operation such as `Flux#publish` and `Flux#publishNext`
-  will materialize a dedicated instance of the pipeline and trigger the data flow inside it.
+- Factorias Estaticas en el Flux permite crear origenes, o generarlos desde distintos tipos de callbacks.
+- Los metodos de instancia, llamados operadores, te permiten construir tuberias (`pipelines`) de procesamiento asíncrono que
+  producirán una secuencia asíncrona.
+- Cada `Flux#subscribe()` o la operación de multidifusión, como `Flux#publish` y `Flux#publishNext`
+  permitirán materializar una instancia dedicada del pipeline y disparar el flujo de datos dentro de este.
 
-See the javadoc [here](http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html).
+Mirá el javadoc [aqui](http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html).
 
-![Marble diagram representation of a Flux](/techio/assets/flux.png)
+![Diagrama Marble representando un Flux](/techio/assets/flux.png)
 
-`Flux` in action :
+`Flux` en acción :
 
 ```java
 Flux.fromIterable(getSomeLongList())
@@ -32,69 +32,69 @@ Flux.fromIterable(getSomeLongList())
     .subscribe(System.out::println);
 ```
 
-## Practice
+## Práctica
 
-In this lesson we'll see different factory methods to create a `Flux`.
+En esta leccion veremos los distintos metodos factoría para crear un `Flux`.
 
-> ![Tip](/techio/assets/tip.png) **TIP**: If you want some insight as to what is going on
-inside a `Flux` or `Mono` you are about to return during one of these exercises, you can
-always append `.log()` to the flux just before returning it. Part 6 makes use of that. 
+> ![Consejo](/techio/assets/tip.png) **TIP**: Si quieres algo de información sobre lo que está pasando
+dentro de un `Flux` o `Mono` estás a punto de regresar durante uno de estos ejercicios, puedes
+siempre anexar `.log()` al flujo justo antes de devolverlo. La Parte 6 se hace uso de eso. 
 
-Let's try a very simple example: just return an empty flux.
+Probemos un ejemplo muy simple: simplemente devuelve un flujo vacío.
 
 
 ```java
 static <T> Flux<T> empty()
-// Create a Flux that completes without emitting any item.
+// Crea un flujo que se completa sin emitir ningún elemento.
 ```
 @[Empty flux]({"stubs": ["/src/main/java/io/pivotal/literx/Part01Flux.java"], "command": "io.pivotal.literx.Part01FluxTest#empty", "layout":"aside"})
 
 
 
-One can also create a `Flux` out of readily available data:
+Uno también puede crear fácilmente un `Flux` de datos previamente disponibles:
 
 ```java
 static <T> Flux<T> just(T... data)
-// Create a new Flux that emits the specified item(s) and then complete.
+// Crea un nuevo Flux que emita el (los) elemento(s) especificado(s) y luego completa.
 ```
 
 @[Flux from values]({"stubs": ["/src/main/java/io/pivotal/literx/Part01Flux.java"], "command": "io.pivotal.literx.Part01FluxTest#fromValues", "layout":"aside"})
 
 
-This time we will use items of a list to publish on the flux with `fromIterable`:
+Esta vez utilizaremos elementos de una lista para publicar en el flujo con `fromIterable`:
 ```java
 static <T> Flux<T> fromIterable(Iterable<? extends T> it)
-// Create a Flux that emits the items contained in the provided Iterable.
+// Cree un flujo que emita los elementos contenidos en el Iterable proporcionado.
 ```
 
 @[Create a Flux from a List]({"stubs": ["/src/main/java/io/pivotal/literx/Part01Flux.java"], "command": "io.pivotal.literx.Part01FluxTest#fromList", "layout":"aside"})
 
 
-In imperative synchronous code, it's easy to manage exceptions with familiar `try`-`catch`
-blocks, `throw` instructions...
+En el código síncrono imperativo, es fácil administrar las excepciones con el familiar bloque `try`-`catch`
+, instrucciones `throw`...
 
-But in an asynchronous context, we have to do things a bit differently. Reactive Streams
-defines the `onError` signal to deal with exceptions. Note that such an event **is terminal:
-this is the last event the `Flux` will produce**.
+Pero en un contexto asincrónico, tenemos que hacer las cosas de forma un poco diferente. Reactive Streams
+define la señal `onError` para tratar con excepciones. Nota que tal evento **es terminal:
+este es el último evento que el `Flux` producirá**.
 
-`Flux#error` produces a `Flux` that simply emits this signal, terminating immediately:
+`Flux#error` produce un `Flux` que simplemente emita una señal, terminando inmediatamente:
 
 ```java
 static <T> Flux<T> error(Throwable error)
-// Create a Flux that completes with the specified error.
+// Crea un flujo que se complete con el error especificado.
 ```
 
 @[Create a Flux that emits an IllegalStateException]({"stubs": ["/src/main/java/io/pivotal/literx/Part01Flux.java"], "command": "io.pivotal.literx.Part01FluxTest#error", "layout":"aside"})
 
 
-To finish with `Flux`, let's try to create a Flux that produces ten elements, at a regular pace.
-In order to do that regular publishing, we can use `interval`.
-But it produces an infinite stream (like ticks of a clock), and we want to `take` only
-10 elements, so don't forget to precise it.
+Para finalizar con `Flux`, intentemos crear un flujo que produzca diez elementos a un ritmo regular.
+Para hacer esa publicación regular, podemos usar `interval`.
+Pero produce una corriente infinita (como tics de un reloj), y queremos tomar (`take`) solo
+10 elementos, por lo que no olvides de precisarlo.
 
 ```java
 static Flux<Long> interval(Duration period)
-// Create a new Flux that emits an ever incrementing long starting with 0 every period on the global timer.
+// Crea un nuevo Flux que emite para siempre un Long de forma incremental, comenzando con 0, por cada periodo en el temporizador global.
 ```
 
 @[Create a Flux that emits 10 increasing values]({"stubs": ["/src/main/java/io/pivotal/literx/Part01Flux.java"], "command": "io.pivotal.literx.Part01FluxTest#countEach100ms", "layout":"aside"})

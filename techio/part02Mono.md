@@ -1,27 +1,27 @@
 # Mono
 
-## Description
+## Descripción
 
-A `Mono<T>` is a Reactive Streams `Publisher`, also augmented with a lot of operators that
-can be used to generate, transform, orchestrate Mono sequences.
+Un `Mono<T>` es un `Publisher` de Reactive Streams, también aumentado con un conjunto de operadores que
+se pueden usar para generar, transformar, orquestar secuencias de Mono.
 
-It is a specialization of `Flux` that can emit **at most 1 `<T>` element**: a Mono is either
-valued (complete with element), empty (complete without element) or failed (error).
+Es una especialización de `Flux` que puede emitir **al menos 1 elemento `<T>`**: un Mono es tanto
+valuado (completo con un elemento), vacío (completo sin elemento) o fallido (error).
 
-A `Mono<Void>` can be used in cases where only the completion signal is interesting (the
-Reactive Streams equivalent of a `Runnable` task completing).
+Un `Mono<Void>` puede usarse en casos donde solo interesa la señal de finalización (el
+equivalente en Reactive Streams de la compleción de una tarea `Runnable`).
 
-Like for `Flux`, the operators can be used to define an asynchronous pipeline which will be
-materialized anew for each `Subscription`.
+Tal como con `Flux`, los operadores pueden usarse para definir un pipeline asincróno que será
+materializado de nuevo para cada `Subscription`.
 
-Note that some API that change the sequence's cardinality will return a `Flux` (and vice-versa,
-APIs that reduce the cardinality to 1 in a `Flux` return a `Mono`).
+Tenga en cuenta que algunas API que cambian la cardinalidad de la secuencia retornarán un `Flux` (y vice-versa,
+existen APIs que reducen la cardinalidad a 1 en un `Flux` las cuales retornarán un `Mono`).
 
-See the javadoc [here](http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html).
+Mira el javadoc [aquí](http://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html).
 
-![Marble diagram representation of a Mono](/techio/assets/mono.png)
+![Diagrama Marble representación de un Mono](/techio/assets/mono.png)
 
-`Mono` in action:
+`Mono` en acción:
 
 ```java
 Mono.just(1)
@@ -30,31 +30,31 @@ Mono.just(1)
     .subscribe(System.out::println);
 ```
 
-## Practice 
+## Práctica 
 
 
-As for the Flux let's return a empty `Mono` using the static factory.
+Como con el Flux, vamos a retornar un `Mono` usando la factoría estática.
 
 ```java
 static <T> Mono<T> empty()
-// Create a Mono that completes without emitting any item.
+// Crea un Mono que se completa sin emitir ningún elemento.
 ```
 @[Empty Mono]({"stubs": ["/src/main/java/io/pivotal/literx/Part02Mono.java"], "command": "io.pivotal.literx.Part02MonoTest#empty", "layout":"aside"})
 
 
 
-Now, we will try to create a `Mono` which never emits anything.
-Unlike `empty()`, it won't even emit an `onComplete` event.
+Ahora, intentaremos crear un `Mono` que nunca emita nada.
+A diferencia de `empty()`, ni siquiera emitirá un evento `onComplete`.
 
 @[No Emission]({"stubs": ["/src/main/java/io/pivotal/literx/Part02Mono.java"], "command": "io.pivotal.literx.Part02MonoTest#noSignal", "layout":"aside"})
 
 
-Like `Flux`, you can create a `Mono` from an available (unique) value.
+Al igual que con `Flux`, podemos crear un `Mono` a partir de un (único) valor ya disponible.
 
 @[Create a Mono from an item]({"stubs": ["/src/main/java/io/pivotal/literx/Part02Mono.java"], "command": "io.pivotal.literx.Part02MonoTest#fromValue", "layout":"aside"})
 
 
-And exactly as we did for the flux, we can propagate exceptions.
+Y exactamente como lo hicimos con flux, podemos propagar excepciones.
 
 
 @[Create a Mono that emits an IllegalStateException]({"stubs": ["/src/main/java/io/pivotal/literx/Part02Mono.java"], "command": "io.pivotal.literx.Part02MonoTest#error", "layout":"aside"})
